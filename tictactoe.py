@@ -58,9 +58,10 @@ def update_board(board: Board, player: Player, coords: Coords):
     :param player: the player that made the move
     :param coords: the coordinates (row, column) of the player's move
     """
+    
     board[coords[0]][coords[1]] = player
 
-
+ 
 def get_move(player: Player) -> Coords:
     """
     Asks a player for their next move.
