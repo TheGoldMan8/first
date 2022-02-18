@@ -103,8 +103,6 @@ def switch_player(current_player: Player) -> Player:
 def play_game(board_size: int = None):
     """
     Play a game of Tic-Tac-Toe.
-
-    :param board_size: the size of the game board. randomized by default.
     """
     if not board_size:
         board_size = 3
@@ -114,7 +112,10 @@ def play_game(board_size: int = None):
         show_board(board)
         coordinates = get_move(current_player)
         update_board(board, current_player, coordinates)
-        current_player = switch_player(current_player)
+        if won(current_player, board):
+            pass
+        else:
+            current_player = switch_player(current_player)
     show_winner(current_player)
 
 
