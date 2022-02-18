@@ -4,8 +4,6 @@ X = "X"
 O = "O"
 EMPTY = "*"
 
-# Bigger board sizes are less likely
-RANDOM_SIZES = [3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 6]
 
 # Type aliases
 Player = str
@@ -58,7 +56,7 @@ def update_board(board: Board, player: Player, coords: Coords):
     :param player: the player that made the move
     :param coords: the coordinates (row, column) of the player's move
     """
-    
+
     board[coords[0]][coords[1]] = player
 
  
@@ -109,7 +107,7 @@ def play_game(board_size: int = None):
     :param board_size: the size of the game board. randomized by default.
     """
     if not board_size:
-        board_size = random.choice(RANDOM_SIZES)
+        board_size = 3
     board = create_board(board_size)
     current_player = X
     while not won(current_player, board):
